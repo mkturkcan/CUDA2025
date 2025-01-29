@@ -36,6 +36,7 @@ pip install transformers accelerate datasets
 
 ## NVIDIA Jetson Orin Nano Super
 
+This is current as of January 29, 2025, with JetPack 6.1.
 ```bash
 sudo apt install nvidia-jetpack
 sudo apt-get install firefox
