@@ -34,7 +34,7 @@ pip install transformers accelerate datasets
 ## Windows (RTX 4090/5090)
 
 
-## NVIDIA Jetson Nano Super
+## NVIDIA Jetson Orin Nano Super
 
 ```bash
 sudo apt install nvidia-jetpack
