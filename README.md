@@ -3,19 +3,7 @@ Installation instructions for Pytorch+CUDA for 2025 January.
 
 ## Linux (RTX 4090/5090)
 
-### Pruning-Capable Environment
-```bash
-mkdir -p ~/miniconda3
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-source ~/miniconda3/bin/activate
-conda init --all
-conda create -n ai python=3.11
-conda activate ai
-conda install cuda-toolkit=12.6 -c pytorch -c nvidia
-pip3 install torch torchvision torchaudio
-pip install transformers==4.46.2 accelerate==1.1.1 datasets torch-pruning==1.5.1
-```
+You will want different types of environments for different libraries to run. However, today, most libraries are interoperable. Your default one should be the training environment below.
 
 ### Training Environment
 ```bash
@@ -31,8 +19,32 @@ pip3 install torch torchvision torchaudio
 pip install transformers accelerate datasets
 ```
 
+A task you will want to perform often will be pruning. I am adding the specific versioning you will need for this:
+
+### Pruning-Capable Environment
+```bash
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+source ~/miniconda3/bin/activate
+conda init --all
+conda create -n ai python=3.11
+conda activate ai
+conda install cuda-toolkit=12.6 -c pytorch -c nvidia
+pip3 install torch torchvision torchaudio
+pip install transformers==4.46.2 accelerate==1.1.1 datasets torch-pruning==1.5.1
+```
+
 ## Windows (RTX 4090/5090)
 
+For Windows, I recommend installing Anaconda first. After it is installed, getting all libraries you will need is very straightforward:
+```bash
+conda create --name pytorch11 python=3.11
+conda install git jupyterlab pytorch torchvision torchaudio cuda-toolkit=12.4 pytorch-cuda=12.4 -c pytorch -c nvidia 
+pip install flash_attn-2.7.0.post2+cu124torch2.5.1cxx11abiFALSE-cp312-cp312-win_amd64.whl
+pip install scipy matplotlib transformers accelerate
+pip install tensorrt --extra-index-url https://pypi.nvidia.com
+```
 
 ## NVIDIA Jetson Orin Nano Super
 
