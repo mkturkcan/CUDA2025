@@ -45,6 +45,7 @@ pip install flash_attn-2.7.0.post2+cu124torch2.5.1cxx11abiFALSE-cp312-cp312-win_
 pip install scipy matplotlib transformers accelerate
 pip install tensorrt --extra-index-url https://pypi.nvidia.com
 ```
+Precompiled flash attention is provided in the Releases section.
 
 ## NVIDIA Jetson Orin Nano Super
 
