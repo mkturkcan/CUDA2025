@@ -81,3 +81,25 @@ pip install timm transformers accelerate --upgrade
 pip install https://pypi.jetson-ai-lab.dev/jp6/cu126/+f/366/1e00f6d836491/opencv_python-4.10.0-py3-none-any.whl#sha256=3661e00f6d836491b4fdad8ea04bc56999c21345a8dcd5a6eb11c662e6c86f3d
 pip install https://pypi.jetson-ai-lab.dev/jp6/cu126/+f/bea/77ef3f9923c70/opencv_contrib_python-4.10.0+6b45caa-cp310-cp310-linux_aarch64.whl#sha256=bea77ef3f9923c708f6f38e85b615ae9b4fc775de9b765f3b42355d7ef5e8e0c
 ```
+
+### Super Upgrade
+
+Add the following to your .bashrc:
+```
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export PATH=/home/jetson/.local/bin:$PATH
+```
+And:
+```
+pip install jupyterlab ultralytics
+pip install numpy==1.26.4
+pip3 install opencv-python 
+sudo apt-get install libcblas-dev
+sudo apt-get install libhdf5-dev
+sudo apt-get install libhdf5-serial-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libjasper-dev 
+sudo apt-get install libqtgui4 
+sudo apt-get install libqt4-test
+```
